@@ -32,7 +32,7 @@ RUN sed -i 's/const ServerName = "gophish"/const ServerName = "IGNORE"/' config/
 RUN sed -i 's/const RecipientParameter = "rid"/const RecipientParameter = "keyname"/g' models/campaign.go
 
 # Copying in custom 404 handler
-COPY ./files/phish.go ./controllers/phish.go
+COPY https://github.com/ekkk849/sneaky_gophish/blob/main/files/phish.go ./controllers/phish.go
 
 RUN go get -v && go build -v
 
